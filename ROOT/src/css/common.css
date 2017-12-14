@@ -1,0 +1,120 @@
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,
+caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin: 0;padding: 0;}
+header,footer,section,article,aside,nav,address,figure,figcaption,menu,
+details{display: block;}
+table{border-collapse: collapse;border-spacing: 0;}
+caption,th{text-align: left;font-weight: normal;}
+html,body,fieldset,img,iframe,abbr{border: 0;}
+i,cite,em,var,address,dfn{font-style: normal;}
+[hidefocus],summary{outline: 0;}
+li{list-style: none;}
+h1,h2,h3,h4,h5,h6,small{font-size: 100%;}
+sup,sub{font-size: 83%;}
+pre,code,kbd,samp{font-family: inherit;}
+q:before,q:after{content: none;}
+textarea{overflow: hidden;resize: none;}
+label,summary{cursor: default;}
+a,button{cursor: pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:normal;font-family:Microsoft YaHei}
+del,ins,u,s,a,a:hover{text-decoration: none;}
+body,textarea,input,button,select,keygen,legend {font:12px/1.14 arial,simsun;color: #333;outline: 0;}
+html,body{background-color: #fff;color: #323232;font-family:Microsoft YaHei!important;}
+body,.ui.header{
+    font-family:Microsoft YaHei!important;
+}
+a,a:after{font-family:Microsoft YaHei!important;}
+a.header:hover{color: #000!important;}
+.in-btn:hover{color: #000}
+/*清浮动*/
+.clearfix:after{
+    content: ".";display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;
+}
+.ui.segment{margin-bottom: 0!important;}
+.ui.grid,.ui.column{margin: 0!important;padding-left: 0!important;}
+/*兼容ie低版本*/
+.clearfix{ zoom: 1;}
+/*公共的导航头部开始----木子*/
+header div.ui.segment.h-nav{padding: 48px 0;}
+.h-nav{overflow: hidden;border: none!important; border-radius: 0!important;}
+.h-nav  .h-men.ui.menu a.item.itemf span{display: inline-block; width: 40px;height: 10px;}
+.h-nav  .h-men.ui.menu a.item> img{width: 33px;margin-left: 50px;font-family:Microsoft YaHei}
+.h-nav  .ui.gird  .h-men{width: 82.6%;font-size: 20px;padding: 0;}
+.h-nav  .ui.gird  .h-men a{padding-top: 0;padding-bottom: 0;color: #323232}
+.h-nav  .ui.gird  .h-men a:hover{background: white;color: #e60012}
+.h-nav  .ui.gird  .h-men a.activ{color: red;background: #fff}
+@media (min-width: 1400px) {
+    .ui.container{width: 1320px;   }
+    .ui.container.in-s3  .in-s1 .six.wide.column{
+        width: 33.2%!important;
+        padding-right: 5px;
+    }
+   .ui.container.in-s3  .in-s1 .six.wide.column div{
+         max-width: 433px;
+    }
+    .ui.container.in-s3  .in-s1 .ten.wide.column  {
+        width: 66.8%!important;
+        padding-right: 0;
+    }
+    .ui.container.in-s3  .in-s1 .ten.wide.column .grid .column:nth-child(2n) {
+        max-width: 433px;
+
+    }
+    .ui.container.in-s3  .in-s1 .ten.wide.column .grid .column:nth-child(2n+1) {
+        max-width: 441px;
+    }
+    .ui.grid>[class*="three wide"].column.eb-width{
+        width:20%!important;
+    }
+    .ui.grid>[class*="thirteen wide"].column.eb-widths{
+        width:80%!important;
+    }
+    .in-s2 .ui.container .in-s1> .column:nth-child(2n+1){
+        padding-left: 140px!important;
+
+    }
+    .in-s2 .ui.container .in-s1> .column:nth-child(2n){
+        padding-right: 140px!important;
+
+    }
+ }
+@media (max-width: 1400px) {
+    .wd-c .wd-tab .ui.grid.wd-j-col2 .row2{display: block}
+    .wd-c .wd-tab .ui.grid.wd-j-col2 .row1{display: none}
+    .wd-c h2.ui.header{  background-size: 100%  auto;}
+    .in-s5-cp{
+        bottom: 22%;
+    }
+    #phone{
+        left: 60%;
+        max-width: 350px;
+    }
+    .in-ph{display: none}
+    .h-nav  .ui.gird  .h-men{font-size: 17px}
+}
+@media (max-width: 1200px) {
+    /*线下门店*/
+    .sp-det .ui.grid  .column.ps-col2{padding-left:5rem!important;}
+    .sp-det .ui.grid  .column.ps-col3{padding-left:12rem!important;}
+    .extra.bta{
+        bottom: 10px;
+    }
+    .in-s5-cp{
+        bottom: 26%;
+    }
+    .in-s5-cp.in-s5-cps{
+        bottom: 110px;
+    }
+   #ware .ui.grid .columns.column {
+       padding-top: 5px!important;
+   }
+    #ware .ui.grid .columns.column ~.in-fb{
+        padding-bottom: 7px!important;
+    }
+    .in-fbs.in-fb{
+        padding-top: 0;
+    }
+    #ware{
+        padding-left: 1px!important;
+    }
+    .h-nav  .ui.gird  .h-men{font-size: 17px}
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>东箭官网-实体门店详情</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="shortcut icon" href="../img/index/tit.ico" type="image/x-icon">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="../../dist/semantic.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("header .ui a:eq(3)").css("color", "#e60012");
+        });
+    </script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?ak=moOZm2Q9z9BhEKaBFWaSz3KC14NhMXH8&v=2.0&services=false"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+    <style>
+    dl,dt,dd,ul,li{
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+    dt{
+        font-size:14px;
+        font-family:"微软雅黑";
+        font-weight:bold;
+        border-bottom:1px dotted #000;
+        padding:5px 0 5px 5px;
+        margin:5px 0;
+    }
+    dd{
+        padding:5px 0 0 5px;
+    }
+    li{
+        line-height:28px;
+    }
+     ul li{
+        float: left;
+    }
+    td{padding-left: 0}
+    </style>
+</head>
+<body>
+<header>
+    <script type="text/javascript" src="../js/header.js" ></script>
+</header>
+<section   class="sd-w">
+    <div class="ui container wrap-a" style="position: relative">
+        <div class="ad-l">当前位置：<a href="index.html">首页</a>><a href="Physical-store.html">实体门店</a>><a    >门店详情</a></div>
+        <h1 class="ui header center aligned"></h1>
+        <div  class="ui grid middle" >
+            <div class="six wide column ">
+                <div class="add-detail">
+                    <h2>地址：</h2>
+                    <p class="sd-ad"></p>
+                    <p class="ad-ph"></p>
+                    <a class="btn" >交通线路和地图></a>
+                    <h2>营业时间:</h2>
+                    <p><span>星期一至星期日:</span><span>9:00-21:00</span></p>
+                </div>
+            </div>
+            <div class="ten wide column" id="container">
+                <input type="button" value="样式1" onclick="openInfoWindow1()"/>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="b_footer">
+    <script type="text/javascript" src="../js/footer.js" ></script>
+</div>
+<script>
+    // 百度地图API功能
+    var arr = [
+        /*-----1箭牌卫浴----*/
+        //杭州
+        {x:120.158279,y:30.21358,address:'南复路59号杭州陶瓷品市场三厅三楼',tel:'0571-86083263',name:'杭陶四厅'},
+        {x:120.228094,y:30.268521,address:'三堡杭海路555号钱江新时代广场A座1楼162-164号',tel:'0571-86715582',name:'城东三堡'},
+        {x:120.201102,y:30.319232,address:'石桥路238号石桥装饰材料中心D区66号',tel:'0571-86796930',name:'城东石桥'},
+        {x:120.300982,y:30.327167,address:'杭州德胜东路2888号恒大国际建材家居博览中心B1-1009',tel:'0571-87027351',name:'城东恒大'},
+        {x:120.16087,y:30.316616,address:'秋涛北路118号佳好佳1+1国际卫陶二楼2001东箭专馆' ,tel:'0571-86967335',name:"城东佳好佳"},
+        {x:119.985658,y:30.40111,address:'杭州余杭区瓶窑镇华兴路102－104号/311115',tel:'0571-88549316',name:'城东瓶窑'},
+        {x:120.119586,y:30.32346,address:'杭州汽车北站对面月星家居建材市场1楼A081-A082/311115',tel:'0571-86085523',name:'城西月星'},
+        {x:120.069573,y:30.369182,address:'古墩路与绕城高速交汇处亿丰最佳空间1楼A9-A10箭牌卫浴门店',tel:'0571-88367362',name:"城西亿丰"},
+        {x:120.102508,y:30.320849,address:'古墩路808号新时代装饰市场C座21-22号',tel:'0571-88101936',name:'城西新时代'},
+        {x:120.276317,y:30.186509,address:'萧山开元名都银爵国际建材馆1楼',tel:'0571-82516093',name:'萧山开元名都'},
+        {x:120.252163,y:30.058486,address:'萧山临浦建材商贸城6-15、17号',tel:'0571-82411356',name:'萧山临浦'},
+        {x:120.296385,y:30.171282,address:'萧山商业城建材市场三区90-94号',tel:'0571-82718861',name:'萧山商业城'},
+        {x:120.296669,y:30.208034,address:'萧山通汇北路世纪龙装饰城4-216/218/220/222',tel:'0571-82608228',name:'萧山新世纪'},
+        {x:120.161467,y:30.316398,address:'大关路288号省二轻建材市场东箭场馆二楼',tel:'0571-88290998',name:'省二轻'},
+        //台州
+        {x:121.412033,y:28.615559,address:'红星美凯龙台州洪家商场一楼8068号',tel:'0576-89815856',name:'路桥店'},
+        {x:121.383154,y:28.586747,address:'台州市路桥装饰城精品屋1区005-017号',tel:'0576-82433325',name:'红星二店'},
+        {x:121.407091,y:28.684626,address:'椒江红星美凯龙·新明国际家居生活广场14幢101-128号',tel:'0576-89807980',name:'省二轻'},
+        {x:121.254621,y:28.647644,address:'黄岩新天地家居广场一楼116-118号',tel:'0576-89167766' ,name:'黄岩店'},
+        //绍兴
+        {x:120.577016,y:30.026723,address:'绍兴(104国道北复线)红星美凯龙一楼A8058号',tel:'0575-88269058',name:'红星店'},
+        {x:120.572122,y:30.029688,address:'绍兴正大装饰商城A楼1040号',tel:'0575-88227501',name:'正太店'},
+        {x:120.60088,y:30.000223,address:'绍兴城东建材城西区1-31号',tel:'0575-88618722',name:'城东店'},
+        //嘉兴
+        {x:120.709136,y:30.742017,address:'嘉兴建材陶瓷市场市场路727号东箭专馆一楼',tel:'0573-82692199',name:"箭牌专馆"},
+        {x:120.810657,y:30.743634,address:'嘉兴市南湖区广益路1111号嘉兴红星美凯龙家居生活广场一楼A8035-8037号',tel:'0573-82808200',name:'红星店'},
+        {x:120.709176,y:30.741901,address:'嘉兴建材陶瓷市场天桥一号馆T101-102号',tel:'0573-82616662',name:'建陶店'},
+        //福州
+        {},
+        {x:119.34321,y:26.092461,address:'福州喜盈门建材家居广场1037-1039#',tel:'0591-88055121',name:'南方卫浴'},
+        {x:119.342623,y:26.09022,address:'福州南方建材市场5座7-11#',tel:'0591-83639539',name:'上渡卫浴'},
+        //宁德
+        {x:119.284148,y:26.044667,address:'福州仓山红星美凯龙商场一楼A8036',tel:'0591-38179871',name:'仓山红星'},
+        {x:119.551344,y:26.656513,address:'宁德中国红家居市场D幢一楼141、142#',tel:'0593-2985070',name:'中国红'},
+        //莆田
+        {x:119.021725,y:25.42325,address:'莆田喜盈门建材家居广场一楼1211#',tel:'0594-2279218',name:'喜盈门'},
+        {x:119.031445,y:25.454276,address:'莆田红星美凯龙商场一楼A8051-8052#',tel:'0594-2279218',name:'红星'},
+        /*---安华---*/
+        //杭州
+        {x:120.158884,y:30.186963,address:'杭州南复路59号陶瓷品市场8号厅8022-8023',tel:'0571-86582119',name:'八厅'},
+        {x:120.20946,y:30.271176,address:'秋涛北路118号佳好佳1+1国际卫陶W2001',tel:'0571-86044915',name:'佳好佳'},
+        {x:120.069573,y:30.369182,address:'104国道与古墩路延伸段交叉口亿丰最家空间一楼',tel:'0571-87071086',name:"亿丰"},
+        {x:120.160702,y:30.316122,address:'大关路和绍兴路交界处省二轻建材市场东箭专馆三楼',tel:'0571-86786352',name:'省二轻'},
+        {x:120.103561,y:30.320703,address:'古墩路808号新时代家居生活广场Ｂ座一楼27号',tel:'0571-88101937',name:'新时代'},
+        //嘉兴
+        {x:120.709136,y:30.742017,address:'嘉兴建材陶瓷市场市场路727号东箭专馆一楼',tel:'0573-82692196',name:'专馆'},
+        /*----威乃达----*/
+        //杭州
+        {x:120.198049,y:30.203409,address:'江南大道1088号第六空间大都会建材馆E馆东箭专馆三楼',tel:'0571-86580833',name:'大都会'},/**/
+        /*------2箭牌橱柜------*/
+        //杭州
+        {x:120.159746,y:30.213797,address:'杭州陶瓷品市场三厅三楼',tel:'0571-86582552',name:'杭州四厅'},
+        {x:120.103561,y:30.320703,address:'古墩路808号新时代家居生活广场',tel:'0571-86580220',name:'杭州新时代'},
+        {x:120.160702,y:30.316122,address:'大关路288号省二轻东箭专馆二楼箭牌橱柜',tel:'0571-86580220',name:'省二轻'},
+        //绍兴
+        {x:120.10145,y:30.314242,address:'绍兴(104国道北复线)红星美凯龙A8199号',tel:'0575-88248199',name:'红星'},
+        /*-----箭牌瓷砖----*/
+        //杭州
+        {x:120.159746,y:30.213797,address:'南复路59号杭州陶瓷品市场三厅三楼',tel:'0571-81604091',name:'杭陶'},
+        {x:120.209761,y:30.271524,address:'秋涛路118号国际卫陶馆3楼H3007',tel:'0571-86091710',name:'佳好佳'},
+        {x:120.160702,y:30.316122,address:'大关路288号省二轻建材市场东箭专馆二楼',tel:'0571-88290998',name:"省二轻"},
+        {x:120.102508,y:30.320849,address:'古墩路808号新时代装饰市场C座21-22号',tel:'0571-88101936',name:'新时代'},
+
+        //绍兴
+        {x:120.10145,y:30.314242,address:'绍兴(104国道北复线)红星美凯龙二楼B8188号',tel:'0575-88269181',name:'红星'},
+        //湖州
+        {x:119.925946,y:31.002504,address:'湖州市二环西路2077号红星美凯龙负一楼箭牌瓷砖',tel:'0572-2710315',name:'红星'},
+        //嘉兴
+        {x:120.709136,y:30.742017,address:'嘉兴建材陶瓷市场市场路727号东箭专馆',tel:'0573-82692197',name:'专馆'},
+        {x:120.810657,y:30.743634,address:'嘉兴市南湖区广益路1111号嘉兴红星美凯龙家居生活广场二楼B8039-8041号',tel:'0573-82808201',name:'红星'},
+        //福州
+        {x:119.284148,y:26.044667,address:'福州仓山红星美凯龙商场二楼B8007',tel:'0591-38179872',name:'仓山红星'},
+        //莆田
+        {x:119.021814,y:25.423049,address:'莆田喜盈门建材家居广场负一楼0315#',tel:'0594-2279219',name:'喜盈门'},
+        /*------东鹏----*/
+        //杭州
+        {x:120.159746,y:30.213797,address:'杭州市南复路59号杭州陶瓷品市场三厅三楼',tel:'0571-86906563',name:'三厅'},
+        {x:120.197051,y:30.207934,address:'滨江区时代大道大都会市场东箭专馆负一楼',tel:'0571-86582201',name:'大都会'},
+        {x:120.161752,y:30.317514,address:'大关路与绍兴路交叉口二轻建材市场东箭专馆一楼 ',tel:'0571-86582201',name:'省二轻'},
+        {x:120.20946,y:30.271176,address:'秋涛路佳好佳1+1国际卫陶广场H3006',tel:'0571-86582201',name:'佳好佳'},
+        {x:120.102987,y:30.320561,address:'古墩路新时代装饰广场E座1楼123号',tel:'0571-89962527',name:'新时代'},
+        {x:120.300982,y:30.327167,address:'下沙九堡建材市场二楼',tel:'0571-88050876',name:'恒大'},
+        /*------摩恩----*/
+        //杭州
+        {x:120.159746,y:30.213797,address:'杭州上城区南复路59号陶瓷品市场三厅四楼',tel:'0571-86087783',name:'办公室'},
+        {x:120.103086,y:30.320431,address:'古墩路808号新时代装饰广场一楼C区22号',tel:'0571-88940189',name:'新时代'},
+        {x:120.210226,y:30.271008,address:'杭州秋涛路佳好佳1+1卫陶广场东箭专馆',tel:'0571-86988239',name:'佳好佳'},
+        {x:120.194819,y:30.201476,address:'江南大道1088号第六空间大都会建材馆E馆东箭专馆',tel:'0571-86683091',name:'大都会'},
+        {x:120.160702,y:30.316122,address:'杭州大关路与绍兴路交叉口省二轻建材市场东箭专馆',tel:'0571-88036071',name:'省二轻'},
+        {x:120.16016,y:30.21352,address:'杭州上城区南复路59号陶瓷品市场十厅（南复路与凤凰山路交接红绿灯处',tel:'0571-86085894',name:'杭州陶瓷品市场'},
+        {x:120.300982,y:30.327167,address:'杭州市德胜东路2888号九堡恒大国际建材市场B馆1楼-1019',tel:'0571-87153796',name:'恒大'},
+        {x:120.069573,y:30.369182,address:'杭州市余杭区良渚街道亿丰最家空间家居展览中心一楼1FA36',tel:'0571-89366393',name:'亿丰'},
+        //绍兴
+        {x:120.577016,y:30.026723,address:'绍兴(104国道北复线)红星美凯龙一楼A8200',tel:'0575-88268056',name:'红星'},
+        //湖州
+        {x:120.133055,y:30.889559,address:'湖州白鱼潭路788号米兰装饰广场商务楼23号',tel:'0572-2386115',name:'米兰'},
+        //嘉兴
+        {x:120.709136,y:30.742017,address:'嘉兴建材陶瓷市场市场路727号东箭专馆一楼',tel:'0573-82692193',name:'红星'},
+        /*----------3TOTO----------*/
+        //杭州
+        {x:120.159746,y:30.213797,address:'杭州上城区南复路59号陶瓷品市场三厅四楼',tel:'0572-86087012',name:'办公室 '},
+        {x:120.161923,y:30.213301,address:'杭州上城区南复路59号陶瓷品市场十厅',tel:'0572-86084690',name:'杭州陶瓷品市场'},
+        {x:120.210226,y:30.271008,address:'杭州秋涛路佳好佳1+1卫陶广场东箭专馆',tel:'0572-86960715',name:'佳好佳'},
+        {x:120.300982,y:30.327167,address:'杭州德胜东路2888号恒大国际建材家居博览中心 ',tel:'0572-88478227',name:'恒大'},
+        {x:120.160702,y:30.316122,address:'杭州大关路与绍兴路交叉口省二轻建材市场东箭专馆',tel:'0572-88316521',name:'省二轻'},
+        {x:120.103457,y:30.320256,address:'古墩路808号新时代装饰广场 ',tel:'0571-88323976',name:'新时代'},
+        {x:120.228094,y:30.268521,address:'江南大道1088号第六空间大都会建材馆E馆东箭专馆 ',tel:'0571-86086805',name:'大都会'},
+        {x:121.372431,y:28.600323,address:'杭海路555号新时代家居生活广场（钱江新城店）A区',tel:'0571-87165865',name:'三堡'},
+        {x:120.118105,y:30.322718,address:'杭州市莫干山路1165号',tel:'0571-86083905',name:'月星'},
+        {x:120.069573,y:30.369182,address:'杭州余杭良渚街道勾庄路218号亿丰最佳空间建材馆 ',tel:'0571-86853807',name:'亿丰'},
+        {x:120.296669,y:30.208034,address:'萧山世纪龙建材市场2楼10幢209 ',tel:'0571-82875990',name:'萧山世纪龙'},
+        {x:120.134922,y:30.278494,address:'萧山金城路928号银爵国际家具生活馆',tel:'0571-83696781',name:'萧山开元名都'},
+        //湖州
+        {x:120.133055,y:30.889559,address:'湖州白鱼潭路788号米兰装饰广场商务楼23号',tel:'0572-2386115',name:'米兰'},
+        {x:120.080755,y:30.846294,address:'湖州二环西路2077号红星美凯龙一楼TOTO专柜 ',tel:'0572-2710335',name:'红星'},
+        //绍兴
+        {x:120.577016,y:30.026723,address:'绍兴(104国道北复线)红星美凯龙一楼A8202',tel:'0575-88268202',name:'红星店'},
+        {x:120.512588,y:30.105761,address:'柯桥红星美凯龙一楼A8112-A8113-A8125',tel:'0575-85323220',name:'柯桥'},
+        {x:120.61504,y:29.999897,address:'绍兴城东建材城西区1-31号',tel:'0575-88641909',name:'城东店'},
+        //嘉兴
+        {x:120.709136,y:30.742017,address:'嘉兴建材陶瓷市场市场路727号东箭专馆一楼',tel:'0573-82692192',name:'专馆'},
+        {x:120.810657,y:30.743634,address:'嘉兴市南湖区广益路1111号嘉兴红星美凯龙家居生活广场一楼A8019-A8021',tel:'0573-82808299',name:'红星店'},
+        {x:116.982974,y:36.701372,address:'嘉兴建材陶瓷市场天桥3号馆T114-115号',tel:'0573-82668587',name:'建陶店'},
+        /*------金意陶----*/
+        //杭州
+        {x:120.159746,y:30.213797,address:'杭州上城区南复路59号陶瓷品市场三厅四楼',tel:'0571-86585053',name:'办公室'},
+        {x:120.16016,y:30.21352,address:'杭州上城区南复路59号陶瓷品市场十厅',tel:'0571-86082557',name:'思想馆'},
+        {x:120.210226,y:30.271008,address:'杭州秋涛路佳好佳1+1卫陶广场东箭专馆三楼',tel:'0571-86437972',name:'佳好佳'},
+        {x:120.160702,y:30.316122,address:'杭州大关路与绍兴路交叉口省二轻建材市场东箭专馆',tel:'0571-88034653',name:'省二轻'},
+        {x:120.105774,y:30.318233,address:'古墩路808号新时代装饰广场D座33-3号',tel:'0571-88101935',name:'新时代'},
+        {x:120.194819,y:30.201476,address:'江南大道1088号第六空间大都会建材馆E馆东箭专馆二楼',tel:'0571-86682579',name:'大都会'},
+        {x:119.9209,y:30.053716,address:'富阳金鑫市场一楼111-112',tel:'0571-63336971',name:'富阳'},
+        {x:120.266013,y:30.428419,address:'临平江南家居商场1FC008',tel:'0571-86182970',name:'临平'},
+        {x:120.2765,y:30.18584,address:'萧山金城路928号开元名都建玛特市场2楼',tel:'0571-85806681',name:'萧山开元名都'},
+        //绍兴
+        {x:120.577016,y:30.026723,address:'绍兴(104国道北复线)红星美凯龙二楼B8181',tel:'0575-88267181',name:'红星店'},
+        //嘉兴
+        {x:120.709136,y:30.742017,address:'嘉兴建材陶瓷市场市场路727号东箭专馆一楼',tel:'0573-82692193',name:'专馆'},
+    ];
+    var indexNum = window.location.href.split("?")[1];
+    $("h1").text(arr[indexNum].name);
+    $(".sd-ad").text(arr[indexNum].address);
+    $(".ad-ph").text(arr[indexNum].tel);
+    var map = new BMap.Map("container");    // 创建Map实例
+    var point = new BMap.Point(arr[indexNum].x,arr[indexNum].y);
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+    map.centerAndZoom(point, 16);
+    //添加地图类型控件
+    map.addControl(new BMap.MapTypeControl({
+        mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));
+    map.setCurrentCity("杭州");           //设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    // 百度地图API功能
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+        '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+        '地址：北京市海淀区上地十街10号<br/>电话：(010)59928888<br/>简介：百度大厦位于北京市海淀区西二旗地铁站附近，为百度公司综合研发及办公总部。' +
+        '</div>';
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title  : "百度大厦",      //标题
+        width  : 290,             //宽度
+        height : 105,              //高度
+        panel  : "panel",         //检索结果面板
+        enableAutoPan : true,     //自动平移
+        searchTypes   :[
+            BMAPLIB_TAB_SEARCH,   //周边检索
+            BMAPLIB_TAB_TO_HERE,  //到这里去
+            BMAPLIB_TAB_FROM_HERE //从这里出发
+        ]
+    });
+   //var marker = new BMap.Marker(point); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    $(".btn").click(function () {
+        searchInfoWindow1.open(marker);
+        /*信息*/
+        $("#BMapLib_bubble_title1").text(arr[indexNum].name);
+        $("#BMapLib_bubble_content1").text(arr[indexNum].address)
+        $("#BMapLib_SearchInfoWindow1").css({'fontFamily':'Microsoft YaHei','fontSize':'14px'})
+        $("#BMapLib_bubble_content1").css('lineHeight','25px')
+        $("#BMapLib_tab_fromhere1").css('width','170px');
+        $("#BMapLib_transBox1 table tr td").css('paddingLeft','2px')
+        $("#BMapLib_trans_text1").css({'textIndent':'10px','lineHeight':'30px'});
+        $("#BMapLib_SearchInfoWindow1 img").css('top','100%')
+    });
+    map.addOverlay(marker); //在地图中添加marker
+    //样式1
+    var searchInfoWindow1 = new BMapLib.SearchInfoWindow(map, "信息框内容", {
+        width  : 390,
+        title: "信息框1", //标题
+        panel : "panel", //检索结果面板
+        enableAutoPan : true, //自动平移
+        searchTypes :[
+            BMAPLIB_TAB_FROM_HERE, //从这里出发
+            BMAPLIB_TAB_SEARCH   //周边检索
+        ]
+    });
+
+
+
+</script>
+</body>
+</html>
