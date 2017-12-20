@@ -1,17 +1,23 @@
 
 /*------首页--------*/
 .s-color{background: #fff}
+.s-back.s-color,.s-back{background: #fafafa}
 /*业务介绍*/
-.in-s1 .row >h1{
+.in-s1-w  .container .column  div img{max-width: 428px;}
+.in-s1-w  .container .column  div h3{font-size: 20px;line-height: 34px;}
+.in-s1-w  .container .column  div h3 .sub.header{font-size: 16px;}
+.in-s1 .row >h1,.in-s2 .row >h1{
     font-size: 32px;
-    padding-top: 15px;
+    padding-top: 40px;
+    padding-bottom: 15px;
 }
-.in-s1 .row >h1 .sub.header{
+.in-s1 .row >h1 .sub.header,.in-s2 .row >h1 .sub.header{
     font-size: 22px;
     margin-top: 5px;
     font-weight:600 ;
     letter-spacing: 1px;
 }
+.in-s1 .row  .ui.cards .card ,.in-s2 .row  .ui.cards .card{}
 .in-s1 .column{
     padding-left: 0!important;
 }
@@ -51,7 +57,33 @@
     left: 0;
     bottom: 65px;
 }
-/*线下 门店*/
+/*--品牌门店--*/
+.in-s2-w  .container .row  div.sixteen{margin: -30px 0 33px}
+.in-s2-w  .container .row  div a,.in-s4-w  .container .row  div a{color: #e60012;font-size: 16px;display:inline-block; }
+.in-s2-w  .container .column{margin-bottom: 55px;}
+.in-s2-w  .container .column img{margin-bottom: 10px}
+.in-s2-w  .container .column  div h3{line-height: 55px;font-size: 20px;max-width: 365px;}
+.in-s2-w  .container .column  div h3.m{max-width: 390px;}
+.in-s2-w  .container .column  div h3 .sub.header{line-height: 19px;font-size: 12px}
+/*---自营店--*/
+.in-s3-w  .container .column{padding-right: 0}
+.in-s3-w  .container .column p{font-size: 18px;line-height: 34px;margin: 30px 0 50px;}
+.in-s3-w  .container .column  img.ui.image{max-width: 650px;height: auto}
+/*--优采宝--*/
+.s-business-l.s-business-r{float: left}
+.s-business-l{width:37.8%; }
+ .ui.grid .s-business-l, .ui.grid .s-business-r{padding: 0}
+.s-business-l .ui.grid .column{ padding:0 5px 0;position: relative}
+.s-business-l .ui.grid .column  span{font-size: 24px;line-height: 27px;color: #fff;position: absolute;margin: auto; width: 25px; top: 0; left: 0; bottom: 0; right: 0;  }
+.s-p1{height: 114px;}
+.s-p2{height: 83px;}
+.s-p3{height: 202px;}
+.s-p4{height: 105px;}
+.s-business-r{width: 62.2%}
+.in-s5-w  .container .column .row h1{max-width: 630px;margin-bottom: 15px}
+.in-s5-w  .container .column .row  h1 .sub.header{font-size: 16px;line-height: 27px;margin-top: 10px}
+.in-s5-w  .container .column .ui.grid{padding-bottom: 85px;}
+    /*线下 门店*/
 .in-btn{
     color: #323232;
     width: 120px;
@@ -60,7 +92,7 @@
     line-height: 35px;
     text-align:center;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .in-s1 .column .ui.items .item .in-cd {
     max-width: 370px;
@@ -69,11 +101,6 @@
 .in-s1  .ui.items  .content.in-s1-c  a.header.in-tit{
     font-size: 22px;
     margin-bottom:0;
-}
-.in-s2{
-    overflow: auto;
-    background: url("../img/index/xianxia-bg.png");
-    background-size: auto 100%;
 }
 /*电商平台*/
 .ui.container.in-s3 .in-s1.ui.grid  .column.in-s3-co{
@@ -136,7 +163,7 @@
 /*--优采宝--*/
 .s-color  div.ui.in-s4-y > h2{
     font-size: 32px;
-    padding: 54px 0  90px;
+    padding: 65px 0  45px;
 }
 .s-color  div.ui.in-s4-y > h2 .header{
     font-size: 20px;
@@ -208,7 +235,7 @@
     bottom: 17.8%;
 }
 .in-s5-cp.in-s5-cps{
-    bottom: 126px
+    bottom: 123px
 }
 .in-s5-cp div{
     float: left;
@@ -271,10 +298,32 @@
 #ware .ui.grid .column{
     padding: 0;
 }
-/*安装*/
+/*--安装维修--*/
+.in-maintenance{padding-bottom: 70px}
+.in-s6-w  .in-s6{padding-bottom: 32px}
+.in-s6-w .ui.container .in-s1 .column{padding-right: 15px; }
+.in-s6-w .ui.container .in-s1 .column.i-ma-3{  padding-left: 15px!important; }
+.in-s6-w .ui.container .in-s1 .column.i-ma-2{  padding-left: 15px!important;}
+.in-s6-w .ui.container .in-s1 .column>div{border:1px solid #dbdbdb;box-shadow: 0 3px #f0f0f0}
+.in-s6-w .ui.container .in-s1 .column>div.in-ma-1{background:#fff url("../img/index/icon_anzhuang.png") no-repeat  center  70px}
+.in-s6-w .ui.container .in-s1 .column>div:hover{background:#ec4b57 url("../img/index/icon_biaozhun.png") no-repeat  center  70px;color: #fff!important;}
+.in-s6-w .ui.container .in-s1 .column>div:hover .s-install h3 ,.in-s6-w .ui.container .in-s1 .column>div:hover .s-install h3 .sub{color: #fff}
+.in-s6-w .s-install  h3.ui.header{font-size: 24px;color: #646464;font-weight: normal;line-height: 32px;letter-spacing: 2px;margin-bottom: 35px;}
+.in-s6-w .s-install  h3 .sub.header{font-size: 18px;}
+.in-s6-w .s-install{padding-top: 160px;border-bottom: 1px solid #dbdbdb;max-width: 285px;margin: 0 auto;padding-bottom: 60px}
+.in-s6-w .s-install p{font-size: 16px;line-height: 26px;}
+.in-s6-w .s-install ~ul{width: 100%;max-width: 320px;margin: 51px auto  0;overflow: auto}
+.in-s6-w .s-install ~ ul li{float: left;padding: 5px 7px;background: #ed6c1e;font-size: 16px;color: #fff;margin-right: 23.5px;border-radius: 3px;margin-bottom: 18px;}
+.in-s6-w .s-install ~ ul li:nth-child(4){margin-right: 0;}
+.in-s6-w .s-install ~ ul li:nth-child(3){margin-right: 31px}
+.in-s6-w .s-install ~ ul li:nth-child(2){margin-right: 31px}
+.in-s6-w .s-install ~ ul li:nth-child(6){margin-right: 20px}
+.in-s6-w .s-install ~ ul li:nth-child(7){margin-right: 21px}
+.in-s6-w .s-install ~ ul li:last-child{margin-right: 0}
 .in-s7 .in-s6 .ui.header.headerl{padding:25px 0 45px;}
+.in-s6-w .s-install  ~img{margin-top: 30px}
 .in-s6 h2.ui.header{
-    padding: 40px 0 ;
+    padding: 32px 0 ;
     font-size: 32px;
 }
 .in-s6 h2.ui.header .sub{
@@ -302,9 +351,7 @@
 }
 #maint .in-cd,#maint .in-tit{
     padding-left: 20px;
-
 }
-
 .in-s6-w{
     position: relative;
     background: url("../img/index/anzhuang-bg.png");
@@ -337,7 +384,7 @@
 }
 /*人力资源*/
 .in-s7{
-    background: url("../img/index/bg.png") no-repeat;
+    background: url("../img/index/pic_bli.jpg") no-repeat;
     background-size: 100% 100%;
 
 }
@@ -380,7 +427,7 @@
 .in-card .extra a{
     width: 120px;
     line-height: 40px;
-    background:url("../img/index/renli-chakan.png")  #ce1c1d no-repeat 10px  center ;
+    background:url("../img/index/feiji.png")  #ce1c1d no-repeat 10px  center ;
     font-size: 16px;
     color: #fff;
     display: inline-block;
@@ -391,7 +438,7 @@
 .in-card.in-cardl{
     border: none;
 }
-.s-foo{height: 60px}
+.s-foo{height: 70px}
 .hr_content_1{
     font-size: 16px;
     color: #646464;
@@ -401,9 +448,16 @@
     color: #646464;
 }
 /*-----------------公司简介---------*/
+.s-delevo .ui.container   .cp-banner li{float: left;border: 1px solid red}
+.s-color.s-delevo{
+    background: -webkit-radial-gradient(#fff 5%, #fff 50%, #ebf3f7 80%); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(#fff 5%, #fff 50%, #ebf3f7 80%); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(#fff 5%, #fff 15%, #ebf3f7 80%); /* Firefox 3.6 - 15 */
+    background: radial-gradient(#fff 10%, #fff 15%, #ebf3f7 80%);
+    margin-bottom: 100px;
+}
 .s-cp h1.ui.header{
     padding: 70px 0 30px;
-    border-bottom: 1px solid #e3e3e6;
     position: relative;
     margin-bottom: 60px;
 }
@@ -635,13 +689,32 @@
 .ad-l a.active{color: rgb(230, 0, 18)}
 
     /*--------电商平台---------*/
+/*----new----*/
+.eb-tit {border-bottom:2px solid #a8a8a8;width: 100%;}
+.eb-tit img{margin-bottom: 20px}
+.eb-tit span{background: #ed4c59;width: 265px;display:block;height: 2px;margin-bottom: -2px;}
+.eb-top{width: 350px;text-align: center}
+.eb-top.eb-top-toto{width: 384px;}
+.eb-top p{font-size: 32px;margin-top: 5px;}
+.eb-top p span{display: inline-block;width: 132px;border-bottom: 1px solid #000;vertical-align: middle}
+.eb-top.eb-wid p span{width: 117px;text-align: center}
+.eb-top.eb-wid{width: 100%; margin-top: -10px}
+.eb-top p span:first-child{margin-right: 10px;}
+.eb-top p span:last-child{margin-left: 10px;}
+.eb-w .row .sixteen.wide{padding: 0;margin-top: 10px;border-bottom: 1px dotted #a8a8a8;padding-bottom: 10px;}
+.eb-w .row .sixteen.wide .ui.grid .column p{font-size:16px;line-height: 24px;margin: 13px 0 8px;}
+.eb-w .row .sixteen.wide .ui.grid .column{padding-left:0;}
+.eb-w .row .sixteen.wide .ui.grid .column img{max-width: 420px}
+.eb-w .row .sixteen.wide .ui.grid .column:nth-child(3n+2){ padding-left: 9.5px;padding-right: 9.5px;}
+.eb-w .row .sixteen.wide .ui.grid .column:nth-child(3n+1){padding-right: 17px;}
+.eb-w .row .sixteen.wide .ui.grid .column:nth-child(3n){padding-left: 17px; padding-right: 0}
+
 .eb-w{
     padding: 30px  0 40px 0;
 }
 .eb-w-l{
     /* border: 1px solid #bcbcbc;*/
     max-width: 260px;
-
 }
 .eb-w-l ul li{
     cursor: pointer;
@@ -649,7 +722,6 @@
 .eb-w-l ul li h2.ui.header,.eb-w-l ul li h2.ui.header .header{
     color: #fff;
     font-weight: normal;
-
 }
 .eb-w-l ul li h2.ui.header{
     margin-top: 4px;
